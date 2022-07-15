@@ -1,0 +1,38 @@
+<h3>
+    <a href="/toy" class="btn btn-primary" style="color: yellow;">
+        <i class="fa fa-plus"> </i> Create New
+    </a>
+    <h2>LIST </h2>
+</h3>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Name:</th>
+            <th>Entry price:</th>
+            <th>Price:</th>
+            <th>Product Type:</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#each list}}
+        <tr>
+            <td>{{this.fullName}}</td>
+            <td>{{this.email}}</td>
+            <td>{{this.mobile}}</td>
+            <td>{{this.city}}</td>
+            <td>
+                <a href="/toy/{{this._id}}">
+                    <i class="fa fa-pencil fa-lg" style="color: blue" aria-hidden="true"></i>
+                </a>
+                <a href="/toy/delete/{{this._id}}"
+                    onclick="return confirm('Are you sure to delete this record?');">
+                    <i class="fa fa-trash fa-lg" style="color: red;" aria-hidden="true">
+
+                    </i>
+                </a>
+            </td>
+        </tr>
+        {{/each}}
+    </tbody>
+</table>
